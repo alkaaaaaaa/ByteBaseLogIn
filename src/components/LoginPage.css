@@ -1,0 +1,1093 @@
+/* Bytebase 登录页面样式 */
+/* 支持响应式设计，适配桌面端和移动端 */
+
+* {
+  box-sizing: border-box;
+}
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('../assets/login-bg.webp');
+  background-size: cover;
+  background-position: 20% center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* 背景区域样式已移至login-container */
+
+/* 移除背景插图相关CSS */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 登录表单区域 */
+.login-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.login-form-wrapper {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  margin-left: 48rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Logo 区域 */
+.logo-section {
+  text-align: center;
+  margin-bottom: 1.1rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image {
+  height: 52px !important;
+  width: auto;
+  max-width: 250px;
+  object-fit: contain;
+}
+
+/* 欢迎区域 */
+.welcome-section {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.welcome-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1.1rem;
+}
+
+.welcome-subtitle {
+  font-size: 0.87rem;
+  line-height: 1.4;
+}
+
+/* 第三方登录按钮 */
+.social-login-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.46rem;
+  align-items: center; /* 使按钮在容器中居中 */
+}
+
+.social-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 内容向左对齐 */
+  gap: 1.078rem;
+  width: 320px; /* 固定宽度为320px */
+  height: 52px; /* 固定高度为52px */
+  padding: 0 1rem;
+  border: 1.5px solid #e1e5e9;
+  border-radius: 4px;
+  background: white;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* 社交登录按钮文本样式 */
+.social-login-btn span:not(.social-icon) {
+  transform: translateY(-1px); /* 将文本微调向上1px */
+  line-height: 1;
+}
+
+.social-login-btn:hover:not(:disabled) {
+  border-color: #667eea;
+  background: #f8f9ff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.social-login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.social-icon {
+  font-size: 1.2rem;
+}
+
+.google-btn:hover:not(:disabled) {
+  border-color: #4285f4;
+  background: #f8f9ff;
+}
+
+.github-btn:hover:not(:disabled) {
+  border-color: #333;
+  background: #f6f8fa;
+}
+
+.github-btn {
+  padding-left: 0.5rem; /* GitHub图标较宽，左侧减少padding */
+  gap: 0.5rem;
+}
+
+.microsoft-btn:hover:not(:disabled) {
+  border-color: #0078d4;
+  background: #f3f9fd;
+}
+
+.microsoft-btn {
+  gap: 1.036rem;
+}
+
+/* 分割线 */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 0.8rem 0;
+  width: 90%;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1.22px;
+  background: #d1d5db;
+}
+
+.divider-text {
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: black;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* 邮箱登录切换按钮 */
+.email-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 320px;
+  padding: 0.875rem 1rem;
+  border: 2px solid rgb(79, 70, 229);
+  border-radius: 3px;
+  background: rgb(79, 70, 229);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.email-toggle-btn:hover:not(:disabled) {
+  background: rgb(67, 56, 202);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+
+/* 浮动标签输入框 */
+.floating-label-group {
+  position: relative;
+  margin-bottom: 1.25rem;
+  width: 320px;
+}
+
+/* 空输入错误状态样式（紫色） */
+.input-error-empty {
+  border-color: rgb(79, 70, 229) !important;
+  border-width: 2px !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+}
+
+.label-error-empty {
+  color: rgb(79, 70, 229) !important;
+}
+
+/* 邮箱格式错误状态样式（红色） */
+.input-error-invalid {
+  border-color: #dc2626 !important;
+  border-width: 2px !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+.label-error-invalid {
+  color: #dc2626 !important;
+}
+
+.input-error-message {
+  position: absolute;
+  left: 50%;
+  top: -45px;
+  transform: translateX(-50%);
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  font-size: 0.83rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 15px;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 气泡小尖角 */
+.input-error-message::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #f3f4f6;
+}
+
+/* 小尖角的边框效果 */
+.input-error-message::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #d1d5db;
+  z-index: -1;
+}
+
+.floating-input {
+  width: 320px; 
+  height: 52px;
+  padding: 0 1rem;
+  border: 1.5px solid #e1e5e9;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background: white;
+  color: #333;
+  display: block; /* 改为block，移除flex居中 */
+  margin: 0 auto; /* 让输入框在容器中居中 */
+}
+
+.floating-input:focus {
+  outline: none;
+  border-color: rgb(79, 70, 229);
+  border-width: 2px;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.floating-label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #666;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  padding-left:0.4rem;
+}
+
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+  top: 0;
+  left: 0.6rem;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: rgb(79, 70, 229);
+  background-color: white;
+  padding: 0 0.5rem;
+}
+
+.floating-input:focus {
+  border-color: rgb(79, 70, 229);
+}
+
+/* 邮箱登录表单 */
+.email-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+/* 表单选项 */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin: 0;
+}
+
+.forgot-password {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* 登录提交按钮 */
+.login-submit-btn {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.login-submit-btn:hover:not(:disabled) {
+  background: #5a6fd8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.login-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 返回按钮 */
+.back-btn {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: transparent;
+  color: #666;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover:not(:disabled) {
+  background: #f6f8fa;
+  border-color: #d0d7de;
+}
+
+/* 页脚链接 */
+.footer-links {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: black;
+}
+
+/* 验证码页面样式 */
+.verification-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  padding: 1rem;
+}
+
+.verification-page h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.verification-page p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.email-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  background-color: #f3f4f6;
+  border-radius: 4px;
+}
+
+.email-display span {
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  color: rgb(99,93,255);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.resend-code {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resend-code span {
+  color: #4b5563;
+}
+
+.resend-link {
+  background: none;
+  border: none;
+  color: rgb(99,93,255);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* 底部链接 */
+.footer-links {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: black;
+  margin-left: 1rem;
+}
+
+.register-link {
+  color: rgb(99,93,255); 
+  text-decoration: none;
+  font-weight: 650;
+  margin-left: 0.25rem;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* 加载遮罩 */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 响应式设计 - 平板设备 */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-background {
+    flex: none;
+    min-height: 40vh;
+    padding: 0;
+  }
+
+  .background-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .welcome-illustration {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .login-form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-form-wrapper {
+    padding: 2rem 1.5rem;
+    max-width: 350px;
+  }
+}
+
+/* 响应式设计 - 现代手机设备 (小米13等) */
+@media (max-width: 480px) {
+  .login-container {
+    min-height: 100vh;
+    min-height: 100dvh; /* 动态视口高度，避免地址栏影响 */
+    flex-direction: column;
+  }
+
+  /* 在移动端隐藏背景图区域 */
+  .login-background {
+    display: none;
+  }
+
+  .login-form-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding: 2rem 1.5rem;
+    background: white;
+    border-radius: 0; /* 移除圆角，占据全屏 */
+    box-shadow: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .login-form-wrapper {
+    padding: 0;
+    box-shadow: none;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto; /* 居中显示 */
+  }
+
+  .logo-image {
+    height: 45px;
+    max-width: 220px;
+    margin-bottom: 2rem;
+  }
+
+  .welcome-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .welcome-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #666;
+  }
+
+  /* 优化按钮触摸体验 */
+  .social-login-btn,
+  .email-toggle-btn,
+  .login-submit-btn,
+  .back-btn {
+    padding: 1.125rem 1.5rem;
+    font-size: 1rem;
+    min-height: 48px; /* 符合触摸标准 */
+    border-radius: 12px;
+    font-weight: 500;
+  }
+
+  /* 社交登录按钮间距 */
+  .social-login-buttons {
+    gap: 1rem;
+  }
+
+  .form-input {
+    padding: 1.125rem 1rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    min-height: 48px;
+    box-sizing: border-box;
+  }
+
+  .form-options {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  /* 优化复选框和链接的触摸区域 */
+  .checkbox-label {
+    padding: 0.5rem 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .forgot-password {
+    padding: 0.5rem 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* 超小屏幕设备 */
+@media (max-width: 320px) {
+  .login-background {
+    min-height: 25vh;
+  }
+
+  .logo-image {
+    height: 30px;
+    max-width: 150px;
+  }
+
+  .background-title {
+    font-size: 1.25rem;
+  }
+
+  .login-form-wrapper {
+    padding: 1rem 0.75rem;
+  }
+
+  .welcome-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* 现代手机安全区域适配 (刘海屏、挖孔屏等) */
+@media (max-width: 480px) {
+  .login-container {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .login-form-container {
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* 高分辨率移动设备优化 */
+@media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .social-login-btn,
+  .email-toggle-btn,
+  .login-submit-btn,
+  .back-btn {
+    border-width: 0.5px; /* 高分辨率屏幕下的细边框 */
+  }
+
+  .form-input {
+    border-width: 1px;
+  }
+}
+
+/* 高分辨率屏幕优化 */
+@media (min-width: 1200px) {
+  .login-container {
+    margin-right: 31px;
+  }
+
+  .background-title {
+    font-size: 3rem;
+  }
+
+  .login-form-wrapper {
+    max-width: 450px;
+    padding: 3.5rem 3rem;
+  }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .login-container {
+    background: #000000;
+  }
+
+  .login-background {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  }
+
+  .background-title {
+    color: #ffffff;
+  }
+
+  .login-form-container {
+    background: #000000;
+    border: none;
+  }
+
+  /* 移动端深色模式优化 */
+  @media (max-width: 480px) {
+    .login-form-container {
+      background: #000000;
+    }
+
+    .welcome-subtitle {
+      color: #999999;
+    }
+  }
+
+  .login-form-wrapper {
+    background: #1a1a1a;
+    color: #ffffff;
+  }
+
+  .welcome-title {
+    color: #ffffff;
+  }
+
+  .welcome-subtitle {
+    color: #cccccc;
+  }
+
+  .form-label {
+    color: #ffffff;
+  }
+
+  .form-input {
+    background: #2d2d2d;
+    border-color: #4d4d4d;
+    color: #ffffff;
+  }
+
+  .form-input:focus {
+    background: #333333;
+    border-color: #667eea;
+  }
+
+  .form-input::placeholder {
+    color: #888888;
+  }
+
+  .checkbox-label {
+    color: #cccccc;
+  }
+
+  .forgot-password {
+    color: #8b9aff;
+  }
+
+  .social-login-btn {
+    background: #2d2d2d;
+    border-color: #4d4d4d;
+    color: #ffffff;
+  }
+
+  .social-login-btn:hover {
+    background: #3d3d3d;
+  }
+
+  .form-input::placeholder {
+    color: #999999;
+  }
+
+  .social-login-btn {
+    background: #3d3d3d;
+    border-color: #4d4d4d;
+    color: #ffffff;
+  }
+
+  .back-btn {
+    background: #3d3d3d;
+    border-color: #4d4d4d;
+    color: #ffffff;
+  }
+
+  .divider::before,
+  .divider::after {
+    background: #4d4d4d;
+  }
+
+  .divider-text {
+    background: #2d2d2d;
+    color: #cccccc;
+  }
+
+  .footer-links {
+    color: #cccccc;
+  }
+
+  .error-message {
+    background: #2a1a1a;
+    border-color: #ff6b6b;
+    color: #ff9999;
+  }
+
+  .user-profile-section {
+    background: #2a2a2a;
+    border-color: #444;
+  }
+
+  .user-name {
+    color: #ffffff;
+  }
+
+  .user-email,
+  .user-provider {
+    color: #cccccc;
+  }
+}
+
+/* 错误提示样式 */
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  border-radius: 8px;
+  color: #c53030;
+  font-size: 0.875rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+.error-icon {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.error-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #c53030;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.error-close:hover {
+  background: rgba(197, 48, 48, 0.1);
+}
+
+/* 用户状态显示样式 */
+.user-profile-section {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  font-size: 1.5rem;
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.user-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.user-name {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #212529;
+  word-break: break-word;
+}
+
+.user-email {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.875rem;
+  color: #6c757d;
+  word-break: break-all;
+}
+
+.user-provider {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #adb5bd;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover:not(:disabled) {
+  background: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.logout-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* 动画效果 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式调整 */
+@media (max-width: 480px) {
+  .user-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .user-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .avatar-placeholder {
+    font-size: 1.25rem;
+  }
+
+  .error-message {
+    padding: 0.875rem;
+    font-size: 0.8125rem;
+  }
+
+  .user-profile-section {
+    padding: 1.25rem;
+  }
+}
