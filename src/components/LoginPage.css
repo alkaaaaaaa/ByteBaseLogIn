@@ -576,6 +576,9 @@
 @media (max-width: 768px) {
   .login-container {
     flex-direction: column;
+    /* 在平板和大屏手机上移除背景图 */
+    background-image: none;
+    background-color: #ffffff;
   }
 
   .login-background {
@@ -618,6 +621,9 @@
     min-height: 100vh;
     min-height: 100dvh; /* 动态视口高度，避免地址栏影响 */
     flex-direction: column;
+    /* 在移动端移除背景图 */
+    background-image: none;
+    background-color: #ffffff;
   }
 
   /* 在移动端隐藏背景图区域 */
@@ -719,6 +725,12 @@
 
 /* 超小屏幕设备 */
 @media (max-width: 320px) {
+  .login-container {
+    /* 在超小屏幕上也移除背景图 */
+    background-image: none;
+    background-color: #ffffff;
+  }
+
   .login-background {
     min-height: 25vh;
   }
